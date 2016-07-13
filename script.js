@@ -4,6 +4,7 @@
 	    var clicks = 1;            
 	    var down = 0;
             function init(){
+		
                imgObj = document.getElementById('myImage');
                imgObj.style.position= 'relative'; 
                imgObj.style.left = '0px'; 
@@ -25,7 +26,15 @@
 		clearTimeout(animate);
 		imgObj.style.top = '0px';
 		down = 0;
-		}            
+		}
+
+            
+	    function reset(){
+	     	clearTimeout(animate);
+		imgObj.style.top = '0px';
+		down = 0;
+		moveRight();
+            }
 
 	    function count(){
 		clicks += 1;
@@ -37,7 +46,7 @@ document.onkeydown = function(e) {
             if(down < 85 && down > 80)
 	    alert('YOU WIN');
 	    else
-	    alert('left');
+	    reset();
             break;
         case 38:
             alert('up');
