@@ -1,0 +1,19 @@
+<style>
+hr { 
+    display: block;
+    margin-top: 15em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+} 
+
+body {
+    background-image: url("pictures/roses.gif");
+    background-color: lightblue;
+}
+.vericaltext{
+    padding: 0 5px 400px
+}
+</style>
