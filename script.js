@@ -1,15 +1,20 @@
- <!--
-	    var score = 0;
-     	    var imgObj = null;
+<!--
+	    var exact = 82; //change this to adjust offset
+            var perfect = 1; //change these three to adjust judgement
+            var great = 3;
+            var good = 5;
+	    var score = 0; //total score
+
+     	    var imgObj = null; 
 	    var imgObj2 = null;
 	    var imgObj3 = null;
 	    var imgObj4 = null;
-            var animate1, animate2, animate3, animate4;
-	    var clicks = 1;            
-	    var down = 0;
+            var animate1, animate2, animate3, animate4;            
+	    var down = 0; //current frame location of arrows
 	    var up = 0;
 	    var left = 0;
 	    var right = 0;
+
             function init(){	
                imgObj = document.getElementById('leftArrow');
 	       imgObj2 = document.getElementById('upArrow');
@@ -116,48 +121,48 @@
 		clicks += 1;
 	    };
 
-document.onkeydown = function(e) {
-    switch (e.keyCode) {
-        case 37:
-            if(left < 85 && left > 80)
-	    {
-		score++;
-		document.getElementById('counter').innerHTML = "Score: " + score;
 
-	    }
-	    else
-	    resetRow1();
+function getScore(direction, resetRow)
+{    
+       if(direction < exact+perfect && direction > exact-perfect)
+       {
+           score+=4; //perfect judgement
+           document.getElementById('counter').innerHTML = "Score: " + score;
+           resetRow;
+       }
+       else if (direction < exact+great && direction > exact-great)
+       {
+           score+=2; //great judgmement
+           document.getElementById('counter').innerHTML = "Score: " + score;
+           resetRow;
+       }
+       else if (direction < exact+good && direction > exact-good)
+       {
+           score++; //good judgement
+           document.getElementById('counter').innerHTML = "Score: " + score;
+           resetRow;
+       }
+       else
+       {
+           score--; //somebody's spamming. punish them!
+           document.getElementById('counter').innerHTML = "Score: " + score;
+       }
+}
+
+document.onkeydown = function(e) {    
+     switch (e.keyCode) {
+        case 37:
+	    getScore(left, resetRow1());
             break;
         case 38:
-	    if(up < 85 && up > 80)
-            {
-                score++;
-                document.getElementById('counter').innerHTML = "Score: " + score;
-
-	    }
-	    else
-	    resetRow2();
-            break;
+            getScore(up, resetRow2());
+	    break;
         case 40:
-	    if(down < 85 && down > 80)
-	    {
-                score++;
-                document.getElementById('counter').innerHTML = "Score: " + score;
-
-	    }
-	    else
-	    resetRow3();
+	    getScore(down, resetRow3());
             break;
         case 39:
-	    if(right <85 && right > 80)
-	    {
-                score++;
-                document.getElementById('counter').innerHTML = "Score: " + score;
-
-            }
-	    else
-	    resetRow4();
-	    break;
+	    getScore(right, resetRow4());
+            break;
     }
 };
 
