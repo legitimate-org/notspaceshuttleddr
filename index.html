@@ -27,16 +27,15 @@
     </form>
 
 <div id = "counter"></div>
+<input style="position: absolute; left:500px;" value="Start" 
+ onclick="moveRow1(); moveRow2(); moveRow3(); moveRow4();" type="button">
+<input style="position: absolute; left: 560px;" value="Stop" onclick="alert('Your final score is: ' + score); stop();"  type="button">
 
    <script>
-//var demo = document.getElementById("qty").value;
-//document.getElementbyId('qty').value = demo + clicks;
-//document.getElementbyId('qty').innerHTML = clicks;
+
 document.getElementById('counter').innerHTML = "Score: " + score;
 
 </script>
 </body>
-         <input style="position: absolute; left:500px;" value="Start" onclick="moveRow1(); moveRow2(); moveRow3(); moveRow4();" type="button">
-         <input style="position: absolute; left: 560px;" value="Stop" onclick="stop();" type="button">
 
 </html>
