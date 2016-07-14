@@ -9,21 +9,21 @@
 </head>
    
    <body>
-   <p id="demo" value = "0"></p>
-  <input id="qty" value="2" />
 
       <form>
-         <img style="position: relative; left: 0px; top: 0px;" id="myImage" src="pictures/down.png" width="200" height="400">
+         <img style="position: relative; left: 0px; top: 0px;" id="downArrow" src="pictures/down.png" width="200" height="400">
 
-         <input value="Start" onclick="moveRight(); count();" type="button">
+         <img style="position: relative; left: 50px; top: 0px;" id="upArrow" src="pictures/upArrow.png" width="200" height="400">
+
+         <input value="Start" onclick="moveRight(); moveRow2();" type="button">
          <input value="Stop" onclick="stop();" type="button">
     </form>
 
 <hr size = 1>
-      
+   
    <script>
-var demo = document.getElementById("qty").value;
-document.getElementbyId('qty').value = demo + clicks;
-//demo.innerHTML = clicks;
+//var demo = document.getElementById("qty").value;
+//document.getElementbyId('qty').value = demo + clicks;
+//document.getElementbyId('qty').innerHTML = clicks;
 </script>
 </body></html>
