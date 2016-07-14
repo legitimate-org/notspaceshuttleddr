@@ -11,10 +11,10 @@
 	    var left = 0;
 	    var right = 0;
             function init(){	
-               imgObj = document.getElementById('downArrow');
+               imgObj = document.getElementById('leftArrow');
 	       imgObj2 = document.getElementById('upArrow');
-	       imgObj3 = document.getElementById('rightArrow');
-	       imgObj4 = document.getElementById('leftArrow');
+	       imgObj3 = document.getElementById('downArrow');
+	       imgObj4 = document.getElementById('rightArrow');
                imgObj.style.position= 'relative'; 
                imgObj.style.left = '0px'; 
 	       imgObj.style.top = '0px';
