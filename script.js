@@ -119,8 +119,9 @@ document.onkeydown = function(e) {
         case 37:
             if(left < 85 && left > 80)
 	    {
-		alert('You Score Left');
 		score++;
+		document.getElementById('counter').innerHTML = "Score: " + score;
+
 	    }
 	    else
 	    resetRow1();
@@ -128,8 +129,9 @@ document.onkeydown = function(e) {
         case 38:
 	    if(up < 85 && up > 80)
             {
-	      alert('You Score Up');
-	      score++;
+                score++;
+                document.getElementById('counter').innerHTML = "Score: " + score;
+
 	    }
 	    else
 	    resetRow2();
@@ -137,8 +139,9 @@ document.onkeydown = function(e) {
         case 40:
 	    if(down < 85 && down > 80)
 	    {
-               alert('You score Down');
-	       score++;
+                score++;
+                document.getElementById('counter').innerHTML = "Score: " + score;
+
 	    }
 	    else
 	    resetRow3();
@@ -146,8 +149,9 @@ document.onkeydown = function(e) {
         case 39:
 	    if(right <85 && right > 80)
 	    {
-               alert('You Score Right');
-	       score++;
+                score++;
+                document.getElementById('counter').innerHTML = "Score: " + score;
+
             }
 	    else
 	    resetRow4();
