@@ -15,17 +15,17 @@
 	       imgObj2 = document.getElementById('upArrow');
 	       imgObj3 = document.getElementById('downArrow');
 	       imgObj4 = document.getElementById('rightArrow');
-               imgObj.style.position= 'relative'; 
+               imgObj.style.position= 'absolute'; 
                imgObj.style.left = '0px'; 
 	       imgObj.style.top = '0px';
-		imgObj2.style.position = 'relative';
-		imgObj2.style.left = '50px';
+		imgObj2.style.position = 'absolute';
+		imgObj2.style.left = '100px';
 		imgObj2.style.top = '0px';	
-		imgObj3.style.position = 'relative';
-		imgObj3.style.left = '100px';
+		imgObj3.style.position = 'absolute';
+		imgObj3.style.left = '200px';
 		imgObj3.style.top = '0px';
-		imgObj4.style.position = 'relative';
-                imgObj4.style.left = '100px';
+		imgObj4.style.position = 'absolute';
+                imgObj4.style.left = '300px';
                 imgObj4.style.top = '0px';
 
             }
@@ -33,9 +33,9 @@
             function moveRow1(){
               // imgObj.style.left = parseInt(imgObj.style.left) - 10 + 'px';
 		imgObj.style.top = parseInt(imgObj.style.top) + 5 + 'px';
-		down = down + 1;
+		left += 1;
                animate1 = setTimeout(moveRow1,20); // call moveRight in 20msec
-		if( down >100)
+		if( left >100)
 		{
 			resetRow1();
 		}
@@ -51,17 +51,17 @@
 
 	    function moveRow3(){
                 imgObj3.style.top = parseInt(imgObj3.style.top) + 5 + 'px';
-                right = right + 1;
+                down += 1;
                 animate3 = setTimeout(moveRow3, 20);
-                if (right > 100)
+                if (down > 100)
                         resetRow3();
             }
 
    	    function moveRow4(){
                 imgObj4.style.top = parseInt(imgObj4.style.top) + 5 + 'px';
-                left = left + 1;
+                right += 1;
                 animate4 = setTimeout(moveRow4, 20);
-                if (left > 100)
+                if (right > 100)
                         resetRow4();
             }
 
@@ -86,7 +86,7 @@
 	    function resetRow1(){
 	     	clearTimeout(animate1);
 		imgObj.style.top = '0px';
-		down = 0;
+		left = 0;
 		moveRow1();
             }
 
@@ -100,14 +100,14 @@
             function resetRow3() {
                 clearTimeout(animate3);
                 imgObj3.style.top = '0px';
-                right = 0;
+                down = 0;
                 moveRow3();
             }
 
             function resetRow4() {
                 clearTimeout(animate4);
                 imgObj4.style.top = '0px';
-                left = 0;
+                right = 0;
                 moveRow4();
             }
 	    function count(){
@@ -117,7 +117,7 @@
 document.onkeydown = function(e) {
     switch (e.keyCode) {
         case 37:
-            if(down < 85 && down > 80)
+            if(left < 85 && left > 80)
 	    {
 		alert('You Score Left');
 		score++;
@@ -134,19 +134,19 @@ document.onkeydown = function(e) {
 	    else
 	    resetRow2();
             break;
-        case 39:
-	    if(right < 85 && right > 80)
+        case 40:
+	    if(down < 85 && down > 80)
 	    {
-               alert('You score Right');
+               alert('You score Down');
 	       score++;
 	    }
 	    else
 	    resetRow3();
             break;
-        case 40:
-	    if(left <85 && left > 80)
+        case 39:
+	    if(right <85 && right > 80)
 	    {
-               alert('You Score Down');
+               alert('You Score Right');
 	       score++;
             }
 	    else
@@ -154,5 +154,7 @@ document.onkeydown = function(e) {
 	    break;
     }
 };
+
             window.onload =init;
+
          //-->

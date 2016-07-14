@@ -11,38 +11,32 @@
    <body>
 
       <form>
+        <img style="position: absolute; left: 0px; top: 0px;" id="leftArrow" src="pictures/leftArrow.png" width="100" height="150">
 
-         <img style="position: absolute; left: 0px; top: 0px;" id="leftArrow" src="pictures/downArrow.png" width="200" height="400">
+        <img style="position: absolute; left: 100px; top: 0px;" id="upArrow" src="pictures/upArrow.png" width="100" height="150">
 
-         <img style="position: absolute; left: 30px; top: 0px;" id="upArrow" src="pictures/upArrow.png" width="200" height="400">
+        <img style="position: absolute; left: 200px; top: 0px;" id="downArrow" src="pictures/downArrow.png" width="100" height="150">
 
-        <img style="position: absolute; left: 60px; top: 0px;" id="downArrow" src="pictures/rightArrow.png" width="200" height="400">
+        <img style="position: absolute; left: 300px; top: 0px;" id="rightArrow" src="pictures/rightArrow.png" width="100" height="150">
 
-        <img style="position: absolute; left: 90px; top: 0px;" id="rightArrow" src="pictures/leftArrow.png" width="200" height="400">
-
-         <img style="position: absolute; left: 0px; top: 0px;" id="downArrow" src="pictures/down.png" width="100" height="150">
-
-         <img style="position: absolute; left: 30px; top: 0px;" id="upArrow" src="pictures/upArrow.png" width="100" height="150">
-
-        <img style="position: absolute; left: 60px; top: 0px;" id="rightArrow" src="pictures/upArrow.png" width="100" height="150">
-
-        <img style="position: absolute; left: 90px; top: 0px;" id="leftArrow" src="pictures/down.png" width="100" height="150">
-
-         <input style="position: relative; left: 120px;" value="Start" onclick="moveRow1(); moveRow2(); moveRow3(); moveRow4();" type="button">
-         <input style="position: relative; left: 130px;" value="Stop" onclick="stop();" type="button">
-
-         <img style="position: absolute; left: 0px; top: 400px;" id="leftRec" src="pictures/leftRec.png" width="100" height="150">
-         <img style="position: absolute; left: 100px; top: 400px;" id="upRec" src="pictures/upRec.png" width="100" height="150">
+        <img style="position: absolute; left: 0px; top: 400px;" id="leftRec" src="pictures/leftRec.png" width="100" height="150">
+        <img style="position: absolute; left: 100px; top: 400px;" id="upRec" src="pictures/upRec.png" width="100" height="150">
         <img style="position: absolute; left: 200px; top: 400px;" id="downRec" src="pictures/downRec.png" width="100" height="150">
         <img style="position: absolute; left: 300px; top: 400px;" id="rightRec" src="pictures/rightRec.png" width="100" height="150">
 
     </form>
 
-<hr size = 1>
-   
+<div id = "counter"></div>
+
    <script>
 //var demo = document.getElementById("qty").value;
 //document.getElementbyId('qty').value = demo + clicks;
 //document.getElementbyId('qty').innerHTML = clicks;
+document.getElementById('counter').innerHTML = "Score: " + score;
+
 </script>
-</body></html>
+</body>
+         <input style="position: absolute; left:500px;" value="Start" onclick="moveRow1(); moveRow2(); moveRow3(); moveRow4();" type="button">
+         <input style="position: absolute; left: 560px;" value="Stop" onclick="stop();" type="button">
+
+</html>
