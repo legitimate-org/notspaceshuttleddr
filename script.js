@@ -4,7 +4,8 @@
             var great = 3;
             var good = 5;
 	    var score = 0; //total score
-
+	    var judgment = 'TESTING';
+		
      	    var imgObj = null; 
 	    var imgObj2 = null;
 	    var imgObj3 = null;
@@ -87,6 +88,8 @@
 		left = 0;
 		score = 0;
 		document.getElementById('counter').innerHTML = "Score: " + score;
+	        judgment=''
+                document.getElementById('judgment').value=judgment;	
 		}
 
             
@@ -128,24 +131,32 @@ function getScore(direction, resetRow)
        {
            score+=4; //perfect judgement
            document.getElementById('counter').innerHTML = "Score: " + score;
-           resetRow;
+           judgment='PERFECT!!'
+	   document.getElementById('judgment').value=judgment;
+	   resetRow;
        }
        else if (direction < exact+great && direction > exact-great)
        {
-           score+=2; //great judgmement
-           document.getElementById('counter').innerHTML = "Score: " + score;
-           resetRow;
+           score+=2; //great judgmement 
+	   document.getElementById('counter').innerHTML = "Score: " + score;
+           judgment='GREAT!'
+           document.getElementById('judgment').value=judgment;
+	   resetRow;
        }
        else if (direction < exact+good && direction > exact-good)
        {
            score++; //good judgement
            document.getElementById('counter').innerHTML = "Score: " + score;
-           resetRow;
+           judgment='GOOD'
+           document.getElementById('judgment').value=judgment;
+	   resetRow;
        }
        else
        {
            score--; //somebody's spamming. punish them!
            document.getElementById('counter').innerHTML = "Score: " + score;
+           judgment='MISS'
+           document.getElementById('judgment').value=judgment;
        }
 };
 
