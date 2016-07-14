@@ -80,7 +80,7 @@
 		imgObj.style.top = '0px';
 		imgObj2.style.top = '0px';
 		imgObj3.style.top = '0px';
-		imgObj4.style.top = '0px'
+		imgObj4.style.top = '0px';
 		down = 0;
 		up = 0;
 		right = 0;
@@ -147,7 +147,7 @@ function getScore(direction, resetRow)
            score--; //somebody's spamming. punish them!
            document.getElementById('counter').innerHTML = "Score: " + score;
        }
-}
+};
 
 document.onkeydown = function(e) {    
      switch (e.keyCode) {
