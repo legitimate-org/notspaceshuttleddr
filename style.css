@@ -9,4 +9,8 @@ hr {
     border-width: 1px;
 } 
 
+body {
+    background-image: url("pictures/dots.gif");
+    background-color: lightblue;
+}
 </style>
