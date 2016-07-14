@@ -13,4 +13,7 @@ body {
     background-image: url("pictures/roses.gif");
     background-color: lightblue;
 }
+.vericaltext{
+    padding: 0 5px 400px
+}
 </style>
