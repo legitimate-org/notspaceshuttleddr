@@ -35,7 +35,17 @@
                 imgObj4.style.top = '0px';
 
             }
-            
+           
+	    function changeColor(){
+		if( score > 100)
+                {
+                  document.getElementById('progressBar').style.backgroundColor = "blue";
+                  document.getElementById('progressBar').value = "DECENT";
+                }
+	    }
+
+
+ 
             function moveRow1(){
               // imgObj.style.left = parseInt(imgObj.style.left) - 10 + 'px';
 		imgObj.style.top = parseInt(imgObj.style.top) + 5 + 'px';
@@ -43,8 +53,9 @@
                animate1 = setTimeout(moveRow1,20); // call moveRight in 20msec
 		if( left >100)
 		{
-			resetRow1();
+		 resetRow1();
 		}
+
             }
 
 	    function moveRow2(){
@@ -158,6 +169,8 @@ function getScore(direction, resetRow)
            judgment='MISS'
            document.getElementById('judgment').value=judgment;
        }
+      
+       changeColor();
 };
 
 document.onkeydown = function(e) {    
@@ -177,6 +190,7 @@ document.onkeydown = function(e) {
     }
 };
 
-            window.onload =init;
+
+window.onload =init;
 
          //-->
