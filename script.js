@@ -80,6 +80,8 @@
 		up = 0;
 		right = 0;
 		left = 0;
+		score = 0;
+		document.getElementById('counter').innerHTML = "Score: " + score;
 		}
 
             
