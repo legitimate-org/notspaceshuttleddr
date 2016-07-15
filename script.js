@@ -37,10 +37,41 @@
             }
            
 	    function changeColor(){
-		if( score > 100)
+		if(score <= 200)
+		  document.body.style.backgroundColor="lightblue";
+
+		if (score > 25 && score < 50)
+		{
+                  document.getElementById('progressBar').style.backgroundColor = "orange";
+                  document.getElementById('progressBar').value = "OKAY";
+		}
+                else if (score > 50 && score < 100)
+                {
+                  document.getElementById('progressBar').style.backgroundColor = "yellow";
+                  document.getElementById('progressBar').value = "DECENT";
+                }
+
+		else if( score > 100 && score < 150)
+                {
+                  document.getElementById('progressBar').style.backgroundColor = "green";
+                  document.getElementById('progressBar').value = "NORMAL";
+                }
+
+                else if (score > 150 && score < 200)
                 {
                   document.getElementById('progressBar').style.backgroundColor = "blue";
-                  document.getElementById('progressBar').value = "DECENT";
+                  document.getElementById('progressBar').value = "EXPERT";
+                }
+
+                else if (score > 200)
+                {
+                  document.getElementById('progressBar').style.backgroundColor = "white";
+		  if(score % 2 == 0)
+		  document.body.style.backgroundColor = "black";
+		  else
+		  document.body.style.backgroundColor = "purple";
+
+                  document.getElementById('progressBar').value = "MASTER";
                 }
 	    }
 
